@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.time.LocalTime;
 
@@ -51,7 +53,39 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
+
+
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>CALCULATE TOTAL COST<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void after_items_selected_order_cost_should_return_total_cost_of_selected_items(){
+        //Adding items to the order list
+        List<String> order = new ArrayList<String>();
+        order.add("Sweet corn soup");
+        order.add("Vegetable lasagne");
+
+        //Placing the order and getting the order cost
+        int orderTotalCost = restaurant.placeOrderAndGetCost(order);
+
+        //Assertion
+        assertEquals(388,orderTotalCost);
+    }
+
+    @Test
+    public void when_no_items_selected_order_cost_should_return_zero(){
+        //Creating order list, but not adding anything into the list
+        List<String> order = new ArrayList<String>();
+
+        //Placing the order and getting the order cost
+        int orderTotalCost = restaurant.placeOrderAndGetCost(order);
+
+        //Assertion
+        assertEquals(0,orderTotalCost);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<CALCULATE TOTAL COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
 
