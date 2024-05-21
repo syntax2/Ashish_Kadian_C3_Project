@@ -83,9 +83,14 @@ class RestaurantTest {
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<CALCULATE TOTAL COST>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void checking_display_details_of_restaurant() {
+        // To improve the test coverage
+        restaurant.displayDetails();
+    }
     
+    //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
     @Test
     public void adding_item_to_menu_should_increase_menu_size_by_1(){
 

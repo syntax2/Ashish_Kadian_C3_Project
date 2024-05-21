@@ -65,8 +65,20 @@ public class Restaurant {
     }
 
     // Method for getting the list of items chosen by the user and return the total cost of the order
-    public int placeOrderAndGetCost(List<String> order){
-        return -1;
+    public int placeOrderAndGetCost(List<String> order) {
+
+        //Local variable to store the totalCost of the order
+        int totalCost = 0;
+
+        for(String eachItem : order) {
+            for(Item item : menu) {
+                if(item.getName().equals(eachItem)) {
+                    totalCost += item.getPrice();
+                }
+            }
+        }
+
+        return totalCost;
     }
 
 }
